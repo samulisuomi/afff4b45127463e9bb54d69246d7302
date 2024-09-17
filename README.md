@@ -4,9 +4,30 @@
 
 - Install Docker and Docker Compose: https://docs.docker.com/compose/install/
 
-## How to run
+## How to run (Docker compose)
 
 #### `docker-compose up`
+
+## How to run (plain Docker)
+
+Build:
+
+```sh
+docker build -t username/afff4b45127463e9bb54d69246d7302:commiths .
+```
+
+Run (e.g.):
+
+```sh
+docker run -e REDIS_HOST="blahblah" -e REDIS_PORT=24498 -e REDIS_PASSWORD="blahblahblah" -p 5123:5000 sha256:abcdefghijklmnopqrstuvwxyz
+```
+
+(Publish image):
+
+```sh
+# docker login
+docker push username/afff4b45127463e9bb54d69246d7302:commiths
+```
 
 ## How to develop
 
