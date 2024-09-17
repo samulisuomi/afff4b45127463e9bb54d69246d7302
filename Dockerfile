@@ -14,7 +14,7 @@ RUN poetry config virtualenvs.in-project true
 ADD pyproject.toml poetry.lock /backend/
 RUN poetry install --no-ansi
 
-ADD .env /backend/
+# ADD .env /backend/
 ADD app.py /backend/
 
 # TODO: Use uswgi if this were a production image
