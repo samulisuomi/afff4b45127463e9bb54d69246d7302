@@ -1,0 +1,18 @@
+version: "3.3"
+services:
+  afff4b45127463e9bb54d69246d7302-flask:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - REDIS_HOST=afff4b45127463e9bb54d69246d7302-redis
+      - REDIS_PORT=6379
+    ports:
+      - 5123:5000
+  afff4b45127463e9bb54d69246d7302-redis:
+    image: "bitnami/redis:7.0.4"
+    environment:
+      - ALLOW_EMPTY_PASSWORD=false
+      - REDIS_PASSWORD=$REDIS_PASSWORD
+    ports:
+      - 6379:6379
